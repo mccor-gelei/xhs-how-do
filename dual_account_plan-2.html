@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>双账号月度内容规划</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif; background: #f7f7f5; color: #1a1a1a; font-size: 13px; padding: 24px 16px 48px; }
+.page { max-width: 880px; margin: 0 auto; }
+h1 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.subtitle { font-size: 12px; color: #888; margin-bottom: 20px; }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.acc-card { border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.acc-header { padding: 12px 16px 10px; }
+.acc-name { font-size: 15px; font-weight: 700; }
+.acc-sub  { font-size: 11px; opacity: 0.75; margin-top: 2px; }
+.brtr-head { background: #3B1B1B; color: #fff; }
+.hans-head { background: #1A3A5C; color: #fff; }
+.acc-body  { background: #fff; padding: 12px 16px; }
+.acc-row   { display: flex; gap: 8px; margin-bottom: 7px; }
+.acc-label { font-size: 10px; font-weight: 600; color: #999; white-space: nowrap; min-width: 36px; margin-top: 2px; }
+.acc-val   { font-size: 12px; color: #333; line-height: 1.5; }
+
+.sec-title { font-size: 14px; font-weight: 600; color: #555; margin: 24px 0 12px; display: flex; align-items: center; gap: 10px; }
+.sec-title::after { content:''; flex:1; height:1px; background:#e5e5e5; }
+
+.funnel { display: flex; border-radius: 8px; overflow: hidden; margin-bottom: 16px; border: 1px solid #e0e0e0; }
+.funnel-step { flex:1; padding: 9px 6px; text-align: center; }
+.f1 { background: #D0E4F5; color: #0C3566; }
+.f2 { background: #A8CCE8; color: #0C3566; }
+.f3 { background: #1A5EA8; color: #fff; }
+.f4 { background: #154B7A; color: #fff; }
+.funnel-step .fl { font-size: 11px; font-weight: 700; }
+.funnel-step .fs { font-size: 10px; margin-top: 2px; opacity: 0.8; }
+
+.tl { position: relative; }
+.tl-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.tl-day { width: 30px; flex-shrink: 0; font-size: 10px; color: #aaa; padding-top: 10px; text-align: right; }
+.tl-dot-col { width: 20px; flex-shrink:0; display:flex; flex-direction:column; align-items:center; }
+.tl-dot { width: 20px; height: 20px; border-radius: 50%; font-size: 10px; font-weight: 700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:6px; }
+.tl-line { flex:1; width:1.5px; background:#e5e5e5; margin-top:3px; }
+.tl-card { flex:1; background:#fff; border-radius: 8px; padding: 10px 14px 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+.tl-card-title { font-size: 13px; font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
+.tl-tags { display:flex; gap:5px; flex-wrap:wrap; margin-bottom: 5px; }
+.tag { font-size: 10px; padding: 1px 7px; border-radius: 4px; font-weight: 500; }
+.tl-desc { font-size: 11px; color: #666; line-height: 1.6; }
+.tl-cta  { font-size: 11px; font-weight: 600; margin-top: 6px; padding-top: 6px; border-top: 1px dashed #eee; }
+
+.brtr-dot  { background: #F5E0D0; color: #7A2E0E; }
+.brtr-card { border-left: 3px solid #9B4516; }
+.brtr-cta  { color: #9B4516; }
+.tbrtr-store  { background:#F5E0D0; color:#7A2E0E; }
+.tbrtr-product{ background:#EAF3DE; color:#3B6D11; }
+.tbrtr-brand  { background:#FAEEDA; color:#854F0B; }
+.tbrtr-project{ background:#EEEDFE; color:#3C3489; }
+.tbrtr-know   { background:#E1F5EE; color:#0F6E56; }
+
+.hans-dot  { background: #D0E4F5; color: #0C3566; }
+.hans-card { border-left: 3px solid #1A5EA8; }
+.hans-cta  { color: #1A5EA8; }
+.thans-lure  { background:#D0E4F5; color:#0C3566; }
+.thans-seed  { background:#DFF0FF; color:#1A5EA8; }
+.thans-trust { background:#E8F3FB; color:#2471A3; }
+.thans-conv  { background:#154B7A; color:#fff; }
+
+.note { background: #fff; border-left: 3px solid #ccc; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 12px; color: #555; line-height: 1.85; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.note strong { color: #222; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>双账号月度内容规划</h1>
+<p class="subtitle">百年翠丽 BRTR（7条/月）× 汉斯格雅杭州（8条/月）</p>
+
+<div class="compare">
+  <div class="acc-card">
+    <div class="acc-header brtr-head">
+      <div class="acc-name">百年翠丽 BRTR</div>
+      <div class="acc-sub">多品牌旗舰 · 品牌建设型</div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-row"><span class="acc-label">定位</span><span class="acc-val">国际一线厨卫一站式供应商，建立高端品牌认知</span></div>
+      <div class="acc-row"><span class="acc-label">目标</span><span class="acc-val">涨粉 · 建立专业形象 · 引发兴趣</span></div>
+      <div class="acc-row"><span class="acc-label">内容</span><span class="acc-val">多品牌轮播 + 干货知识 + 项目案例</span></div>
+      <div class="acc-row"><span class="acc-label">节奏</span><span class="acc-val">每5天1条，共 <strong>7条/月</strong></span></div>
+    </div>
+  </div>
+  <div class="acc-card">
+    <div class="acc-header hans-head">
+      <div class="acc-name">汉斯格雅杭州</div>
+      <div class="acc-sub">单品牌 KOB · 销售转化型</div>
+    </div>
+    <div class="acc-body">
+      <div class="acc-row"><span class="acc-label">定位</span><span class="acc-val">汉斯格雅杭州官方窗口，协助销售，直驱到店</span></div>
+      <div class="acc-row"><span class="acc-label">目标</span><span class="acc-val">引流 → 到店 → 成交，每条内容服务链路</span></div>
+      <div class="acc-row"><span class="acc-label">内容</span><span class="acc-val">产品种草 + 客户证言 + 到店钩子</span></div>
+      <div class="acc-row"><span class="acc-label">节奏</span><span class="acc-val">约每3-4天1条，共 <strong>8条/月</strong></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BRTR -->
+<div class="sec-title">百年翠丽 BRTR · 月度排期（7条）</div>
+<div class="tl">
+
+  <div class="tl-row">
+    <div class="tl-day">D1</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">1</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">BRTR518设创展厅探馆实拍</div>
+      <div class="tl-tags"><span class="tag tbrtr-store">门店引流</span><span class="tag tbrtr-store">展厅动态</span></div>
+      <div class="tl-desc">全景视频+精选实拍，打造账号第一印象，建立高端调性</div>
+      <div class="tl-cta brtr-cta">▸ 目标：账号冷启动破冰</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D5</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">2</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">智能马桶+花洒+厨房龙头选购指南</div>
+      <div class="tl-tags"><span class="tag tbrtr-know">干货知识</span><span class="tag tbrtr-know">选购攻略</span></div>
+      <div class="tl-desc">搜索流量入口，吸引有购买意向的精准用户，冷启动早期利器</div>
+      <div class="tl-cta brtr-cta">▸ 目标：搜索引流，精准获客</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D9</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">3</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">汉斯格雅品牌种草：品牌素材+门店实拍+客户案例</div>
+      <div class="tl-tags"><span class="tag tbrtr-product">产品种草</span><span class="tag tbrtr-product">汉斯格雅</span></div>
+      <div class="tl-desc">主推代理销冠品牌，官方素材+实拍混剪，专业感内容</div>
+      <div class="tl-cta brtr-cta">▸ 目标：种草主力品牌</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D13</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">4</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">捷仕/唯宝/汉斯官方素材二次加工·品牌故事</div>
+      <div class="tl-tags"><span class="tag tbrtr-brand">品牌动态</span><span class="tag tbrtr-brand">行业资讯</span></div>
+      <div class="tl-desc">借助大品牌影响力背书，制作成本低，持续建立账号专业度</div>
+      <div class="tl-cta brtr-cta">▸ 目标：专业背书，提升可信度</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D17</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">5</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">唯宝ViClean智能马桶 or 铂浪高产品种草</div>
+      <div class="tl-tags"><span class="tag tbrtr-product">产品种草</span><span class="tag tbrtr-product">唯宝·铂浪高</span></div>
+      <div class="tl-desc">门店实拍为主，展示在售产品细节质感；每月轮换不同品牌</div>
+      <div class="tl-cta brtr-cta">▸ 目标：拓展品牌认知广度</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D21</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">6</div><div class="tl-line"></div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">展厅主推爆款：畅销品+活动品介绍</div>
+      <div class="tl-tags"><span class="tag tbrtr-store">门店引流</span><span class="tag tbrtr-store">产品介绍</span></div>
+      <div class="tl-desc">结合当月促销节点，产品细节展示+到店咨询引导</div>
+      <div class="tl-cta brtr-cta">▸ 目标：促进到店咨询转化</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D26</div>
+    <div class="tl-dot-col"><div class="tl-dot brtr-dot">7</div></div>
+    <div class="tl-card brtr-card">
+      <div class="tl-card-title">品牌案例集 or 20年唯宝使用真实体验</div>
+      <div class="tl-tags"><span class="tag tbrtr-project">项目案例</span><span class="tag tbrtr-project">客户证言</span></div>
+      <div class="tl-desc">月末收口，真实案例建立信任，长期体验增强说服力</div>
+      <div class="tl-cta brtr-cta">▸ 目标：信任收口，推动决策</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Hans -->
+<div class="sec-title">汉斯格雅杭州 · 月度排期（8条）</div>
+
+<div class="funnel">
+  <div class="funnel-step f1"><div class="fl">🔍 引流</div><div class="fs">搜索/推荐触达</div></div>
+  <div class="funnel-step f2"><div class="fl">💡 种草</div><div class="fs">产品激发欲望</div></div>
+  <div class="funnel-step f3"><div class="fl">✅ 信任</div><div class="fs">案例/证言背书</div></div>
+  <div class="funnel-step f4"><div class="fl">📍 到店</div><div class="fs">钩子驱动行动</div></div>
+</div>
+
+<div class="tl">
+
+  <div class="tl-row">
+    <div class="tl-day">D1</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">1</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">花洒怎么选？恒温 vs 普通，杭州用水环境实测</div>
+      <div class="tl-tags"><span class="tag thans-lure">引流</span><span class="tag thans-seed">干货种草</span></div>
+      <div class="tl-desc">以"杭州"为地域锚点，干货切入搜索流量；用本地水质/水压引出恒温花洒必要性，自然带出汉斯格雅推荐</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「欢迎来杭州展厅免费体验水感」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D4</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">2</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">Activera驰悦系列｜一个花洒让浴室升级成SPA</div>
+      <div class="tl-tags"><span class="tag thans-seed">产品种草</span></div>
+      <div class="tl-desc">主推爆款单品深度种草；水型体验+设计细节+生活场景植入，激发购买欲望</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「展厅有实物，来摸摸才知道好在哪」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D8</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">3</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">客户到店实录｜杭州业主选购汉斯格雅全程记录</div>
+      <div class="tl-tags"><span class="tag thans-trust">信任建立</span><span class="tag thans-lure">到店引流</span></div>
+      <div class="tl-desc">真实客户参观+选品过程记录（可脱敏），展示专业导购服务，降低到店心理门槛</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「预约到店，1对1专属选品服务」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D11</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">4</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">LavaPura纯境系列｜装修前必看，直饮水龙头选购</div>
+      <div class="tl-tags"><span class="tag thans-seed">产品种草</span><span class="tag thans-lure">搜索引流</span></div>
+      <div class="tl-desc">厨房净水龙头赛道搜索量大；以"装修必看"为钩子，自然带出LavaPura产品种草</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「杭州展厅有实机演示，欢迎预约」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D14</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">5</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">买家秀｜入住新家3个月，汉斯格雅花洒真实反馈</div>
+      <div class="tl-tags"><span class="tag thans-trust">客户证言</span><span class="tag thans-conv">强转化</span></div>
+      <div class="tl-desc">真实用户使用反馈（可与客户合作产出），口碑内容信任感最强，直接影响决策</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「和他一样，来展厅亲自体验」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D18</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">6</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">Select M54沥雨厨房龙头｜厨房改造最值得升级的一件事</div>
+      <div class="tl-tags"><span class="tag thans-seed">产品种草</span></div>
+      <div class="tl-desc">场景化内容，对标装修/翻新人群；厨房龙头低认知高决策，适合深度种草带转化</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「展厅可以现场感受出水手感」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D22</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">7</div><div class="tl-line"></div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">进口花洒安装避坑指南｜水压/接口/预埋，装修前必看</div>
+      <div class="tl-tags"><span class="tag thans-lure">搜索引流</span><span class="tag thans-trust">专业背书</span></div>
+      <div class="tl-desc">干货内容二次补充，覆盖"装修前期"搜索人群；用专业安装知识建立账号权威感，为月末转化铺垫</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「安装有疑问？到店1对1免费咨询」</div>
+    </div>
+  </div>
+
+  <div class="tl-row">
+    <div class="tl-day">D26</div>
+    <div class="tl-dot-col"><div class="tl-dot hans-dot">8</div></div>
+    <div class="tl-card hans-card">
+      <div class="tl-card-title">杭州新房装修｜卫浴间全套汉斯格雅落地案例</div>
+      <div class="tl-tags"><span class="tag thans-trust">项目案例</span><span class="tag thans-conv">强转化</span></div>
+      <div class="tl-desc">月末收口，完整案例展示（空间+产品+价格区间），配合到店预约活动，最大化转化</div>
+      <div class="tl-cta hans-cta">▸ 文末钩子：「本月到店咨询享专属方案报价」</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  💡 <strong>两账号协同建议</strong><br>
+  · <strong>汉斯格雅杭州</strong> 每条内容都要有明确的行动指令（预约/到店/私信），BRTR侧重种草和建立认知，CTA可以相对软性；<br>
+  · 两账号内容<strong>错开1-2天发布</strong>，避免同天争夺同一用户注意力；<br>
+  · 汉斯格雅杭州的客户证言/买家秀素材可与BRTR项目案例<strong>互相复用</strong>，降低制作成本；<br>
+  · 建议BRTR在汉斯格雅相关内容中 @ 或导流至汉斯格雅杭州账号，形成<strong>矩阵联动</strong>。
+</div>
+
+</div>
+</body>
+</html>
